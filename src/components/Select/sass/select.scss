@@ -1,0 +1,28 @@
+@import '@src/theme.scss';
+
+.select {
+  position: relative;
+  .select-input {
+    height: 32px;
+    line-height: 30px;
+    border-radius: $litter-radius;
+  }
+  .select-list {
+    position: absolute;
+    border-top: $border #eaeaea;
+    border-radius: $litter-radius;
+    max-height: 120px;
+    overflow-y: auto;
+    ul {
+      padding: 2px;
+      li {
+        padding: 4px 8px;
+        cursor: pointer;
+        border-bottom: 1px solid #eaeaea;
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

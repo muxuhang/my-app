@@ -1,0 +1,14 @@
+@import '@src/theme.scss';
+
+.button {
+  padding: 5px 10px;
+  // background-color: transparent;
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  border-radius: $litter-radius;
+  :hover {
+    background-color: black;
+    opacity: 0.8;
+  }
+}

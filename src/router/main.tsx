@@ -6,7 +6,6 @@ import ErrorPage from '@src/pages/error';
 import HomePage from '@src/pages/home';
 import ProductPage from '@src/pages/product';
 import { Layout } from '@src/components';
-import '@src/main.scss'
 
 const mainRoutes = {
   path: '/',

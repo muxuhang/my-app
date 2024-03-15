@@ -1,4 +1,5 @@
 import React from 'react'
+import './sass/button.scss'
 
 interface ButtonProps {
   children?: any
@@ -6,7 +7,7 @@ interface ButtonProps {
 
 export function Button(props: ButtonProps) {
   const { children } = props
-  return <div>
+  return <button className='px-2 py-1 bg-slate-300 rounded-sm'>
     {children}
-  </div>
+  </button>
 }
