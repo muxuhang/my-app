@@ -1,0 +1,15 @@
+@import "theme.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 14px;
+  background-color: $swan-white;
+}
+.title {
+  font-size: $title-size;
+  font-weight: 600;
+  padding-bottom: $litter-padding;
+}

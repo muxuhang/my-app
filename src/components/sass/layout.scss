@@ -1,0 +1,18 @@
+@import '../../theme.scss';
+.layout {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .layout-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .layout-footer {
+    background-color: $black;
+    color: $white;
+    text-align: center;
+    padding: $litter-padding;
+  }
+}
