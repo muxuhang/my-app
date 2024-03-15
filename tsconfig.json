@@ -29,7 +29,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"
-  ],
+, "src/components/Button/index.jsx"  ],
   "exclude": [
     "node_modules",
     "public"
