@@ -21,9 +21,17 @@
     "jsx": "preserve"
   },
   "include": [
-    "/src/**/*"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
-  ]
+    "node_modules",
+    "public"
+  ],
+  // 用于设置模块名到基于baseUrl的路径映射
+  "paths": {
+    "@/*": [
+      "src/*"
+    ]
+  },
 }
