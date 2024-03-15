@@ -5,7 +5,7 @@ import Footer from "./Footer";
 // import Sidebar from "./Sidebar";
 import Container from './Container';
 
-export default function Layout() {
+export function Layout() {
   return <div className='layout'>
     <Header />
     {/* <Sidebar /> */}
