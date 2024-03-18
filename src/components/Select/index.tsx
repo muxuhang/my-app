@@ -4,7 +4,7 @@
  */
 
 
-import React, { useEffect, useState } from 'react'
+import React, { Reducer, useEffect, useState } from 'react'
 import './sass/select.scss'
 interface ListItemProps {
   id: string | number
@@ -30,6 +30,7 @@ export function Select(props: ButtonProps) {
   const onChange = (e: any) => {
     setContent(e.target.value)
   }
+
   const onItemClick = (item: ListItemProps) => {
     setContent(item.name)
   }
@@ -43,22 +44,26 @@ export function Select(props: ButtonProps) {
       setShow(false)
     }
   }, [list, content, compositionUpdate])
-  const handle = search ? {} : {
+  // 输入框参数
+  const inputOrgs = {
+    value: content,
+    onChange: onChange,
+    onCompositionStart: () => setCompositionUpdate(true),
+    onCompositionEnd: () => setCompositionUpdate(false),
+    onFocus: () => setShow(true),
+    onBlur: () => setShow(false),
+    className: 'select-input w-full px-2 py-1 rounded-sm',
+    placeholder: placeholder || '请输入'
+  }
+  // container 方法
+  const containerHandle = search ? {} : {
     onClick: () => setShow(true),
     onMouseLeave: () => setShow(false)
   }
   return <div className='select w-60'
-    {...handle}
+    {...containerHandle}
     {...orgs}>
-    {search ? <input
-      value={content}
-      onChange={onChange}
-      onCompositionStart={() => setCompositionUpdate(true)}
-      onCompositionEnd={() => setCompositionUpdate(false)}
-      onFocus={() => setShow(true)}
-      onBlur={(e) => setShow(false)}
-      className='select-input w-full px-2 py-1 rounded-sm'
-      placeholder={placeholder || '请输入'}></input> :
+    {search ? <input {...inputOrgs}></input> :
       <div
         className={`select-input select-div w-full px-2 rounded-sm bg-white 
           ${!content && 'select-placeholder'}`}>

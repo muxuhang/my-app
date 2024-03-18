@@ -1,38 +1,33 @@
 import { Select } from '@src/components'
-import { SdProvidor, SdContext } from '@src/context/sdContext'
+import { SdProvidor } from '@src/context/sdContext'
 import React, { useCallback, useContext, useDebugValue, useEffect, useLayoutEffect, useReducer, useState } from 'react'
+import Uselect from './components/Uselect'
 
-
-const reducer = (state, action) => {
-  if (action.type === 'incremented_age') {
-    return {
-      age: state.age + 1
-    };
-  } else {
-    return {
-      age: state.age - 1
-    };
-  }
-}
 export default function HomePage() {
   const [list, setList] = useState([])
-  const [state, dispatch] = useReducer(reducer, { age: 42 });
+  const [state, dispatch] = useReducer((state, action) => {
+    if (action.type === 'incremented_age') {
+      return {
+        age: state.age + 1
+      };
+    } else {
+      return {
+        age: state.age - 1
+      };
+    }
+  }, { age: 42 });
   useCallback(() => {
-
+    console.log('useCallback')
   }, [])
 
   useEffect(() => {
-    // console.log('useEffect', state)
-  }, [state])
+    console.log('useEffect')
+  }, [])
   useLayoutEffect(() => {
-    // console.log('useLayoutEffect')
+    console.log('useLayoutEffect')
   }, [])
 
   useDebugValue()
-
-
-
-
 
   return <div>
     <span className='title'>首页</span>
@@ -44,14 +39,7 @@ export default function HomePage() {
       dispatch({ type: 'reduce_age' })
     }}>减少</button>
     <SdProvidor>
-      <SdContext.Consumer>
-        {(list) => {
-          return <div>
-            <Select list={list}></Select>
-            <Select style={{ marginTop: 5 }} list={list} search></Select>
-          </div>
-        }}
-      </SdContext.Consumer>
+      <Uselect />
     </SdProvidor>
   </div>
 }

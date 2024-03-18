@@ -34,7 +34,7 @@
     "src/pages/home/index.jsx",
     "src/pages/error/index.jsx",
     "src/pages/product/index.jsx"
-  ],
+, "src/context/sdContext.jsx"  ],
   "exclude": [
     "node_modules",
     "public"
