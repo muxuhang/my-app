@@ -28,8 +28,13 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx"
-, "src/components/Button/index.jsx"  ],
+    "src/**/*.tsx",
+    "src/components/Button/index.jsx",
+    "src/components/Select/index.jsx",
+    "src/pages/home/index.jsx",
+    "src/pages/error/index.jsx",
+    "src/pages/product/index.jsx"
+  ],
   "exclude": [
     "node_modules",
     "public"

@@ -4,11 +4,19 @@
   position: relative;
   .select-input {
     height: 32px;
-    line-height: 30px;
+    line-height: 32px;
     border-radius: $litter-radius;
+
+  }
+  .select-div {
+    cursor: pointer;
+  }
+  .select-placeholder {
+    color: #999;
   }
   .select-list {
     position: absolute;
+    z-index: 300;
     border-top: $border #eaeaea;
     border-radius: $litter-radius;
     max-height: 120px;
