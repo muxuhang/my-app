@@ -52,7 +52,7 @@ export function Select(props: ButtonProps) {
     onCompositionEnd: () => setCompositionUpdate(false),
     onFocus: () => setShow(true),
     onBlur: () => setShow(false),
-    className: 'select-input w-full px-2 py-1 rounded-sm',
+    className: 'select-input',
     placeholder: placeholder || '请输入'
   }
   // container 方法
@@ -60,17 +60,15 @@ export function Select(props: ButtonProps) {
     onClick: () => setShow(true),
     onMouseLeave: () => setShow(false)
   }
-  return <div className='select w-60'
+  return <div className='select'
     {...containerHandle}
     {...orgs}>
     {search ? <input {...inputOrgs}></input> :
       <div
-        className={`select-input select-div w-full px-2 rounded-sm bg-white 
-          ${!content && 'select-placeholder'}`}>
+        className={`select-input ${!content && 'select-placeholder'}`}>
         {content || placeholder || '请选择'}
       </div>}
-    {show && !!newList.length && <div
-      className='select-list w-full bg-white'>
+    {show && !!newList.length && <div className='select-list'>
       <ul>
         {newList.map((item) => <li
           onMouseDown={() => onItemClick(item)}

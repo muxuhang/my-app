@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-// tailwind.css 只使用颜色、圆角、内边距、外边距
 @import "theme.scss";
 
 
@@ -23,6 +19,7 @@ code {
 
 .title {
   font-size: $title-size;
+  line-height: 2;
   font-weight: 600;
   padding-bottom: $litter-padding;
 }
